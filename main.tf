@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket3"
+  bucket = "martin-cicd-bucket"
 
   tags = {
-    Name        = "My buckett"
+    Name        = "My CICD bucket"
     Environment = "Dev"
   }
 }
@@ -15,9 +15,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "sctp-ce3-tfstate-bucket"
+    bucket = "martin-cicd-state-bucket"
     region = "us-east-1"
-    key    = "jon.tfstate"
+    key    = "martincicd.tfstate"
   }
 }
 
